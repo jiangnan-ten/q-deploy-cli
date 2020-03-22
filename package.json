@@ -1,0 +1,57 @@
+{
+  "name": "q-deploy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "快速部署脚手架",
+  "author": {
+    "name": "静远"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^5.0.0",
+    "core-js": "^3.6.4",
+    "inquirer": "^7.1.0",
+    "node-emoji": "^1.10.0",
+    "ora": "^4.0.3",
+    "require-from-string": "^2.0.2",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-eslint": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "_id": "q-deploy@1.0.0",
+  "bin": {
+    "q-deploy": "bin/inde.js"
+  },
+  "license": "ISC",
+  "readme": "ERROR: No README data found!"
+}
