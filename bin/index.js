@@ -1,22 +1,47 @@
+#!/usr/bin/env node
+
 const { program } = require('commander')
 const chalk = require('chalk')
-const emoji = require('node-emoji')
+const semver = require('semver')
+const spinner = require('ora')()
+const package = require('../package.json')
+
+function checkNodeVersion(wanted) {
+	if (!semver.satisfies(process.version, wanted)) {
+		console.log(
+			chalk.red(
+				'你的nodejs版本: ' +
+					process.version +
+					', 但是系统需要最低的版本是 ' +
+					wanted +
+					'.\n请升级你的nodejs版本.'
+			)
+		)
+		process.exit(1)
+	}
+}
+
+function main() {
+	checkNodeVersion(package.engines.node)
+}
 
 program
 	.name('q-deploy')
-	.version(`飞天部署, 当前版本 ${require('../package').version}`)
+	.version(`前端快速部署cli, 当前版本 ${require('../package').version}`)
 	.usage('<command> [options]')
 
 program
 	.command('init')
 	.description('获取部署模板')
-	.action(() => {})
+	.action(() => {
+		require('../lib/init')()
+	})
 
 program
 	.command('deploy')
 	.description('部署环境')
 	.option('-e --env <env>', '部署环境', '')
-	.option('--build', '先编译再部署', false)
+	.option('--build', '先编译再部署')
 	.action(cmd => {
 		let Deploy = require('../lib/deploy')
 		new Deploy({ ...cleanArgs(cmd) })
@@ -26,12 +51,7 @@ program.on('command:*', function(operands) {
 	program.outputHelp()
 	console.log()
 	console.log(
-		`  ` +
-			chalk.red(
-				`无此命令 ${chalk.yellow(operands[0])}, 输错了吧? ${emoji.get(
-					'stuck_out_tongue_winking_eye'
-				)}`
-			)
+		`  ` + chalk.red(`无此命令 ${chalk.yellow(operands[0])}, 输错了吧? 😂}`)
 	)
 	console.log()
 })
