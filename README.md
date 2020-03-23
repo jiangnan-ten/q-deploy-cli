@@ -40,5 +40,5 @@ module.exports = {
 
 ```bash
 q-deploy deploy // 部署
-q-deploy --build --env=dev/prod  // env 根据配置文件中的env字段
+q-deploy --build --env=dev/prod deploy // env 根据配置文件中的env字段
 ```

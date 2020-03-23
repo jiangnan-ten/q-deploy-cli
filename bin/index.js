@@ -51,7 +51,7 @@ program.on('command:*', function(operands) {
 	program.outputHelp()
 	console.log()
 	console.log(
-		`  ` + chalk.red(`无此命令 ${chalk.yellow(operands[0])}, 输错了吧? 😂}`)
+		`  ` + chalk.red(`无此命令 ${chalk.yellow(operands[0])}, 输错了吧? 😂`)
 	)
 	console.log()
 })
