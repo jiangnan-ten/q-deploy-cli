@@ -42,6 +42,7 @@ program
 	.description('部署环境')
 	.option('-e --env <env>', '部署环境', '')
 	.option('--build', '先编译再部署')
+	.option('--update', '检查升级', false)
 	.action(cmd => {
 		let Deploy = require('../lib/deploy')
 		new Deploy({ ...cleanArgs(cmd) })
