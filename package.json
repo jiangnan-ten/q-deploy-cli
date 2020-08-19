@@ -1,9 +1,9 @@
 {
   "name": "q-deploy",
-  "version": "1.4.2",
+  "version": "1.5.2",
   "description": "快速部署脚手架",
   "author": {
-    "name": "静远"
+    "name": "tencx"
   },
   "bin": {
     "q-deploy": "bin/index.js"
